@@ -1,2 +1,3 @@
 # lacking-cli
-CLI for the lacking engine
+
+Command Line Interface for the [lacking](https://github.com/mokiat/lacking) engine.
