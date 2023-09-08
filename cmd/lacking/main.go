@@ -1,12 +1,11 @@
 package main
 
 import (
-	"log/slog"
+	"log"
 	"os"
 
 	"github.com/mokiat/lacking-cli/internal/distribution/linux"
 	"github.com/mokiat/lacking-cli/internal/distribution/macos"
-	"github.com/mokiat/lacking-cli/internal/distribution/windows"
 	"github.com/urfave/cli"
 )
 
@@ -31,18 +30,12 @@ func main() {
 						Usage:  "Builds a MacOS distribution",
 						Action: macos.Package,
 					},
-					{
-						Name:   "windows",
-						Usage:  "Builds a Windows distribution",
-						Action: windows.Package,
-					},
 				},
 			},
 		},
 	}
 
 	if err := app.Run(os.Args); err != nil {
-		slog.Error("Command encountered an error", slog.String("error", err.Error()))
-		os.Exit(1)
+		log.Fatalf("Error: %v", err)
 	}
 }

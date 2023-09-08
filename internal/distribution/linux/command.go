@@ -128,7 +128,7 @@ func createBinaryFile(projectFolderLoc, packageFolderLoc string, app *distributi
 	cmd := exec.Command("go", "build", "-o", binFileLoc, filepath.FromSlash(app.MainDir))
 	cmd.Dir = projectFolderLoc
 	cmd.Env = cmd.Environ()
-	cmd.Env = append(cmd.Env, "GOOS", "linux")
+	cmd.Env = append(cmd.Env, "GOOS", platform)
 	cmd.Env = append(cmd.Env, "GOARCH", arch)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr

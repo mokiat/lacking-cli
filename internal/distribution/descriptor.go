@@ -9,12 +9,14 @@ import (
 
 type Application struct {
 	ID          string `yaml:"id"`
+	LongID      string `yaml:"long_id"`
 	Name        string `yaml:"name"`
 	Version     string `yaml:"version"`
 	Description string `yaml:"description"`
 	Contact     string `yaml:"contact"`
 	MainDir     string `yaml:"main"`
 	IconFile    string `yaml:"icon"`
+	Copyright   string `yaml:"copyright"`
 }
 
 func LoadAppDescriptor(fileLoc string) (*Application, error) {
