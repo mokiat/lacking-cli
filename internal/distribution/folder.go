@@ -14,7 +14,7 @@ func CreateBlankDistFolder(projectDirLoc, platform string) (string, error) {
 		return "", fmt.Errorf("error removing existing folder: %w", err)
 	}
 
-	if err := os.Mkdir(distFolderLoc, 0o775); err != nil {
+	if err := os.MkdirAll(distFolderLoc, 0o775); err != nil {
 		return "", fmt.Errorf("error creating new folder: %w", err)
 	}
 
